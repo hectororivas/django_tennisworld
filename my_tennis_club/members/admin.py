@@ -11,6 +11,7 @@ class MemberAdmin(admin.ModelAdmin):
   in the admin.py file.
   """
   list_display = ("firstname", "lastname", "joined_date",)
+  prepopulated_fields = {"slug": ("firstname", "lastname")}
 
 
 admin.site.register(Member, MemberAdmin)
